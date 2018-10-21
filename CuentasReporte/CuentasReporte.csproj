@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\IRepository.cs" />
+    <Compile Include="BLL\RepositorioBase.cs" />
+    <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="Entidades\CuentasDetalle.cs" />
+    <Compile Include="Entidades\Presupuesto.cs" />
+    <Compile Include="Entidades\TiposCuentas.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Cuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Cuenta.Designer.cs">
+      <DependentUpon>Cuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Presupuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Presupuest.Designer.cs">
+      <DependentUpon>Presupuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TipoDeCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TipoDeCuentas.Designer.cs">
+      <DependentUpon>TipoDeCuentas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -68,7 +95,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Cuenta.resx">
+      <DependentUpon>Cuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Presupuest.resx">
+      <DependentUpon>Presupuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TipoDeCuentas.resx">
+      <DependentUpon>TipoDeCuentas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,13 +118,33 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BLL\" />
-    <Folder Include="DAL\" />
-    <Folder Include="Entidades\" />
-    <Folder Include="UI\" />
+    <None Include="Resources\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-guardar-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-guardar-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-nuevo-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buscar1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

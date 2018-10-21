@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CuentasReporte.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace CuentasReporte
         public Main()
         {
             InitializeComponent();
+        }
+
+        private void cuentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Presupuest ps = new Presupuest();
+            ps.Show();
+            ps.MdiParent = this;
         }
     }
 }
