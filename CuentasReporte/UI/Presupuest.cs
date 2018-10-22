@@ -1,4 +1,5 @@
 ﻿using CuentasReporte.BLL;
+using CuentasReporte.DAL;
 using CuentasReporte.Entidades;
 using System;
 using System.Collections.Generic;
@@ -36,10 +37,9 @@ namespace CuentasReporte.UI
         {
             RepositorioBase<CuentasDetalle> repositorio = new RepositorioBase<CuentasDetalle>();
             TipoCuentascomboBox.DataSource = repositorio.GetList(x => true);
-           
-            TipoCuentascomboBox.ValueMember = "Descripcion";
             TipoCuentascomboBox.ValueMember = "CuentaID";
-            TipoCuentascomboBox.ValueMember = "Monto";
+            TipoCuentascomboBox.DisplayMember = "Descripcion";
+
 
         }
 
@@ -181,7 +181,9 @@ namespace CuentasReporte.UI
         private void Agragar_Click(object sender, EventArgs e)
         {
             if (CuentadataGridView.DataSource != null)
+            {
                 this.Detalle = (List<CuentasDetalle>)CuentadataGridView.DataSource;
+            }
             this.Detalle.Add(
                 new CuentasDetalle
                 (
